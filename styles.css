@@ -1,0 +1,40 @@
+.frame{
+	width: 980px;
+	left: 50%;
+	margin-left: -490px;
+	background-color: #444444;
+}
+
+header{
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	height: 54px;
+	background-color: #5b788e;
+}
+
+.logo_elem{
+	position: relative;
+	width: 200px;
+	height: 30px;
+	top: 50%;
+	left: 50%;
+	margin-top: -15px;
+	margin-left: -100px;
+	background-color: #e16c0c;
+}
+
+.menu_panel{
+	width: 980px;
+	height: 45px;
+	background-color: #000000;
+
+}
+
+footer{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 54px;
+	background-color: #5b788e;
+}
