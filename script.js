@@ -22,6 +22,7 @@
 		this.articles = pages[0];
 		this.match = "";
 		this.containsSubstring = function(title){
+			console.log(title);
 			return (title.indexOf(this.match) !== -1);
 		};
 	});

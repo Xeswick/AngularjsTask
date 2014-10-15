@@ -26,15 +26,27 @@
 
 			  	<div class="content">
 				  	<div class="content_1" ng-controller="FilterController as filter" ng-show="menu.isTabSelected(1)">
-				  		<!-- <textArea ng-model="filter.match" placeholder="filter by title"></textArea> -->
-				  		<div class="article" ng-repeat="section in news.content[0].articles"  ng-show="filter.containsSubstring(1)">
-				  			<h2>{{section.title}}</h2>		
-				  			<p>{{section.description}}</p>
-				  		</div>
-				  		<div class="some_stuff"></div>
+				  		<div class="content_1_frame">
+					  		<input type="text" class="filter" ng-model="filter.match" placeholder="filter by title"></input> 
+					  		<div class="content_1_body">
+						  		<div class="article" ng-repeat="section in news.content[0].articles"  ng-show="filter.containsSubstring('{{section.title}}')">
+						  			<h2>{{section.title}}</h2>		
+						  			<p>{{section.description}}</p>
+						  		</div> 
+					  		</div>
+					  	</div>
+				  		<div class="some_stuff_1"></div>
 				  	</div>
-				  	<div class="content_2"></div>
-				  	<div class="content_3"></div>
+				  	<div class="content_2" ng-show="menu.isTabSelected(2)">
+				  		<div class="some_stuff_2"></div>
+				  		<div class="content_2_frame">
+				  			<div class="content_2_body">
+					  			<h2> {{news.content[1].title}} <h2>
+					  			<p ng-repeat="paragraph in news.content[1].body">{{paragraph}}</p>
+				  			</div>
+				  		</div>
+				  	</div>
+				  	<div class="content_3" ng-show="menu.isTabSelected(3)"></div>
 			</div>
 		</div>
 		<footer></footer>
