@@ -1,34 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="appName">
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="styles.css" media="all">	
+  <script type="text/javascript" src="angular.min.js"></script>
+  <Script type="text/javascript" src="script.js"></script>
   <title>some document</title>
 </head>
-<body>
+<body ng-controller="NewsController as news">
   <div class="frame">
-  	<header>
-	  	<div class="logo_elem"></div>
-	  </header>
+	  	<header>
+		  	<div class="logo_elem"></div>
+		  	</header>
+		  	<div ng-controller="MenuController as menu">
+		  		<div class="menu_panel">
+				  	<ul class="menu_1">
+				  		<li class="menu_elem" ng-class="{ active_menu_elem:menu.isTabSelected(1) }"><a href="#" ng-click="menu.tabSelected(1)">text
+				  		</a></li><li class="menu_elem" ng-class="{ active_menu_elem:menu.isTabSelected(2) }"><a href="#" ng-click="menu.tabSelected(2)">text2
+				  		</a></li><li class="menu_elem" ng-class="{ active_menu_elem:menu.isTabSelected(3) }"><a href="#" ng-click="menu.tabSelected(3)">text3
+				  		</a></li>
+				  	</ul>
+			  	</div>
 
-	  <div class="menu_panel">
-	  	<ul class="menu_1">
-	  		<li class="menu_1_elem">text
-	  		</li><li class="menu_1_elem">text2
-	  		</li><li class="menu_1_elem">text3
-	  		</li>
-	  	</ul>
-	  </div>
 
-	  <div class="content">
-	  	<div class="act_content"></div>
-	  	<div class="some_stuff"></div>
-	  </div>
 
-	  <footer></footer>
-  </div>
-
-  
-
+			  	<div class="content">
+				  	<div class="content_1" ng-controller="FilterController as filter" ng-show="menu.isTabSelected(1)">
+				  		<!-- <textArea ng-model="filter.match" placeholder="filter by title"></textArea> -->
+				  		<div class="article" ng-repeat="section in news.content[0].articles"  ng-show="filter.containsSubstring(1)">
+				  			<h2>{{section.title}}</h2>		
+				  			<p>{{section.description}}</p>
+				  		</div>
+				  		<div class="some_stuff"></div>
+				  	</div>
+				  	<div class="content_2"></div>
+				  	<div class="content_3"></div>
+			</div>
+		</div>
+		<footer></footer>
+  	</div>
 </body>
 </html>
